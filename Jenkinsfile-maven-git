@@ -1,0 +1,8 @@
+node{
+    stage('SCM Checkout') {
+    git'https://github.com/praveengit007/praveenmaven'
+    }
+    stage('Compile-Package'){
+      sh 'mvn package'
+    }
+}    
