@@ -8,7 +8,7 @@ pipeline{
  }
  stage("Docker Build Image"){
   steps{
-    sh "docker build -t kammana/2021myapp"
+    sh "docker build -t kammana/2021myapp:v1 ."
   }
  }
  stage{
