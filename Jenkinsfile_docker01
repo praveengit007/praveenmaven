@@ -1,0 +1,25 @@
+pipeline{
+ agent any
+ stages{
+  stage("Maven Build"){
+   steps{
+     sh "mvn clean package"
+   }
+ }
+ stage("Docker Build Image"){
+  steps{
+    sh "docker build -t kammana/2021myapp"
+  }
+ }
+ stage{
+  steps("push to docker hub"){
+    echo "deploy to dev environment" 
+  }
+ }
+ stage("dev-deploy"){
+  steps{
+   echo "deploy to uat environment"
+   }
+  }
+ }
+}
