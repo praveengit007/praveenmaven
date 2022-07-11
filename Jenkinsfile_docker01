@@ -11,8 +11,8 @@ pipeline{
     sh "docker build -t kammana/2021myapp:v1 ."
   }
  }
- stage{
-  steps("push to docker hub"){
+ stage("push to docker hub"){
+  steps{
     echo "deploy to dev environment" 
   }
  }
