@@ -23,7 +23,9 @@ pipeline{
   steps{
    sshagent(['docker-dev']) {
     sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.43.196 docker rm -f mywebapp"
-    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.43.196 docker run -d -p 8080:8080 --name mywebapp kammana/2021myapp:${getLatestCommitId()} "
+    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.43.196 docker run -d -p 8080:8080 --name mywebapp kammana/2021myapp:${getLatestCommitId()}"
+     }
+    }
    }
   }
  }
